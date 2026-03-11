@@ -1,0 +1,6 @@
+@TransporteEscolar.Relatorios.Api_HostAddress = http://localhost:5258
+
+GET {{TransporteEscolar.Relatorios.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

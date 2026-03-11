@@ -1,0 +1,144 @@
+# =========================
+# Build / output
+# =========================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+out/
+publish/
+
+# =========================
+# User-specific files
+# =========================
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Visual Studio / Rider / VS Code
+# =========================
+.vs/
+.idea/
+.vscode/
+
+# Rider
+*.sln.iml
+
+# VS Code workspace storage
+.history/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# NuGet
+# =========================
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+packages/
+.nuget/
+*.nuget.props
+*.nuget.targets
+
+# =========================
+# .NET / Test results
+# =========================
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+coverage.cobertura.xml
+
+# =========================
+# EF Core / local database artifacts
+# =========================
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# =========================
+# Publish profiles / local secrets
+# =========================
+Properties/PublishProfiles/*.pubxml.user
+Properties/PublishProfiles/*.publishsettings
+
+# User Secrets
+secrets.json
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# App settings locais/sensíveis
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.cache
+*.bak
+*.swp
+*.orig
+
+# =========================
+# Generated files
+# =========================
+Generated/
+wwwroot/dist/
+wwwroot/lib/
+
+# =========================
+# Node (caso use front/tooling no futuro)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Azure / deployment leftovers
+# =========================
+PublishScripts/
+*.azurePubxml
+
+# =========================
+# JetBrains / ReSharper
+# =========================
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# Benchmark / profiler outputs
+# =========================
+BenchmarkDotNet.Artifacts/
+
+# =========================
+# Optional: migration SQL dumps / exports
+# =========================
+*.sql.tmp
+*.export

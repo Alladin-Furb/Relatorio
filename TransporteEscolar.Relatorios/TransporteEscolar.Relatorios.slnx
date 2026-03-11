@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TransporteEscolar.Relatorios.Api/TransporteEscolar.Relatorios.Api.csproj" />
+    <Project Path="src/TransporteEscolar.Relatorios.Application/TransporteEscolar.Relatorios.Application.csproj" />
+    <Project Path="src/TransporteEscolar.Relatorios.Domain/TransporteEscolar.Relatorios.Domain.csproj" />
+    <Project Path="src/TransporteEscolar.Relatorios.Infrastructure/TransporteEscolar.Relatorios.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TransporteEscolar.Relatorios.UnitTests/TransporteEscolar.Relatorios.UnitTests.csproj" />
+  </Folder>
+</Solution>
