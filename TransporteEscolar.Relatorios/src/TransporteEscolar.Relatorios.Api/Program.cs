@@ -1,3 +1,4 @@
+using TransporteEscolar.Relatorios.Api.Extensions;
 using TransporteEscolar.Relatorios.Application.Abstractions;
 using TransporteEscolar.Relatorios.Application.Services;
 using TransporteEscolar.Relatorios.Infrastructure.DependencyInjection;
@@ -17,6 +18,8 @@ builder.Services.AddScoped<IIndicadorOperacionalService, IndicadorOperacionalSer
 builder.Services.AddScoped<ISyncHistoricoService, SyncHistoricoService>();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionMiddleware();
 
 if (app.Environment.IsDevelopment())
 {

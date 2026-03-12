@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TransporteEscolar.Relatorios.Application.Abstractions;
 using TransporteEscolar.Relatorios.Application.DTOs;
+using TransporteEscolar.Relatorios.Application.Exceptions;
 
 namespace TransporteEscolar.Relatorios.Api.Controllers;
 
@@ -62,7 +63,7 @@ public class MetricasController : ControllerBase
         CancellationToken cancellationToken)
     {
         if (ano <= 0 || mes < 1 || mes > 12)
-            return BadRequest("Ano ou mês inválido.");
+            throw new BusinessException("Ano ou mês inválido.");
 
         var resultado = await _kmService.ObterMediaDiariaAsync(ano, mes, cancellationToken);
         return Ok(resultado);
@@ -77,7 +78,7 @@ public class MetricasController : ControllerBase
         CancellationToken cancellationToken)
     {
         if (ano <= 0 || mes < 1 || mes > 12)
-            return BadRequest("Ano ou mês inválido.");
+            throw new BusinessException("Ano ou mês inválido.");
 
         var resultado = await _kmService.ObterPorDiaAsync(ano, mes, cancellationToken);
         return Ok(resultado);

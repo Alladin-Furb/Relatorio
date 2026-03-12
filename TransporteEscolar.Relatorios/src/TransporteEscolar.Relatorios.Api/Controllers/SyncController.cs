@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TransporteEscolar.Relatorios.Application.Abstractions;
 using TransporteEscolar.Relatorios.Application.DTOs;
+using TransporteEscolar.Relatorios.Application.Exceptions;
 
 namespace TransporteEscolar.Relatorios.Api.Controllers;
 
@@ -37,7 +38,7 @@ public class SyncController : ControllerBase
         CancellationToken cancellationToken)
     {
         if (dataFim < dataInicio)
-            return BadRequest("Período inválido.");
+            throw new BusinessException("Período inválido.");
 
         var resultado = await _syncHistoricoService.ImportarRotasAsync(dataInicio, dataFim, cancellationToken);
         return Ok(resultado);
@@ -59,7 +60,7 @@ public class SyncController : ControllerBase
         CancellationToken cancellationToken)
     {
         if (dataFim < dataInicio)
-            return BadRequest("Período inválido.");
+            throw new BusinessException("Período inválido.");
 
         var resultado = await _syncHistoricoService.ImportarPeriodoAsync(dataInicio, dataFim, cancellationToken);
         return Ok(resultado);
