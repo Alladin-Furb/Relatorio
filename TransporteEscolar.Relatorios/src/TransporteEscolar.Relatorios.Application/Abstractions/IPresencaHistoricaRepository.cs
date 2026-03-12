@@ -8,4 +8,10 @@ public interface IPresencaHistoricaRepository
         DateOnly inicio,
         DateOnly fim,
         CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyCollection<PresencaHistorica>> ObterPorAlunoEPeriodoAsync(
+        Guid alunoId,
+        DateOnly inicio,
+        DateOnly fim,
+        CancellationToken cancellationToken = default);
 }

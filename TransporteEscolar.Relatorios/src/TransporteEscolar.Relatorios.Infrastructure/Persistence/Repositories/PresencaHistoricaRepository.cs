@@ -24,4 +24,16 @@ public class PresencaHistoricaRepository : IPresencaHistoricaRepository
             .Where(x => x.Data >= inicio && x.Data <= fim)
             .ToListAsync(cancellationToken);
     }
+
+    public async Task<IReadOnlyCollection<PresencaHistorica>> ObterPorAlunoEPeriodoAsync(
+        Guid alunoId,
+        DateOnly inicio,
+        DateOnly fim,
+        CancellationToken cancellationToken = default)
+    {
+        return await _context.PresencasHistoricas
+            .AsNoTracking()
+            .Where(x => x.AlunoId == alunoId && x.Data >= inicio && x.Data <= fim)
+            .ToListAsync(cancellationToken);
+    }
 }

@@ -9,7 +9,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+
 builder.Services.AddScoped<IRelatorioMensalService, RelatorioMensalService>();
+builder.Services.AddScoped<IFrequenciaAlunoService, FrequenciaAlunoService>();
+builder.Services.AddScoped<IKmService, KmService>();
+builder.Services.AddScoped<IIndicadorOperacionalService, IndicadorOperacionalService>();
+builder.Services.AddScoped<ISyncHistoricoService, SyncHistoricoService>();
 
 var app = builder.Build();
 

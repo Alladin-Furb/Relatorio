@@ -18,6 +18,7 @@ public static class DependencyInjection
         services.AddDbContext<RelatoriosDbContext>(options =>
             options.UseNpgsql(connectionString));
 
+        services.AddScoped<IAlunoSnapshotRepository, AlunoSnapshotRepository>();
         services.AddScoped<IPresencaHistoricaRepository, PresencaHistoricaRepository>();
         services.AddScoped<IRotaHistoricaRepository, RotaHistoricaRepository>();
 
