@@ -1,7 +1,9 @@
+using Microsoft.EntityFrameworkCore;
 using TransporteEscolar.Relatorios.Api.Extensions;
 using TransporteEscolar.Relatorios.Application.Abstractions;
 using TransporteEscolar.Relatorios.Application.Services;
 using TransporteEscolar.Relatorios.Infrastructure.DependencyInjection;
+using TransporteEscolar.Relatorios.Infrastructure.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,12 @@ builder.Services.AddScoped<IIndicadorOperacionalService, IndicadorOperacionalSer
 builder.Services.AddScoped<ISyncHistoricoService, SyncHistoricoService>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<RelatoriosDbContext>();
+    await db.Database.MigrateAsync();
+}
 
 app.UseGlobalExceptionMiddleware();
 
