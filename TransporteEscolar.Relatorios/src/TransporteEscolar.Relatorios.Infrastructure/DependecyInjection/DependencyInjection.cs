@@ -16,7 +16,7 @@ public static class DependencyInjection
         var connectionString = configuration.GetConnectionString("RelatoriosDb");
 
         services.AddDbContext<RelatoriosDbContext>(options =>
-            options.UseNpgsql(connectionString));
+            options.UseMySQL(connectionString));
 
         services.AddScoped<IAlunoSnapshotRepository, AlunoSnapshotRepository>();
         services.AddScoped<IPresencaHistoricaRepository, PresencaHistoricaRepository>();
